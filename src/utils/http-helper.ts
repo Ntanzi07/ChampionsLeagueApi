@@ -1,6 +1,6 @@
-import { HttpResponse } from "../interfaces/httpResponseInterface";
+import { HttpResponseInterface } from "../interfaces/http_Response_Interface";
 import * as status from "./http-methods";
 
-export const validateDataResponse = async (data:any): Promise<HttpResponse> => {
-    return data !== 0 ? status.ok(data) : status.notFounded();
+export const validateDataResponse = async (data:any): Promise<HttpResponseInterface> => {
+    return data ? status.ok(data) : status.notFounded();
 }

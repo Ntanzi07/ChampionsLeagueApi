@@ -1,4 +1,6 @@
-[
+import { PlayerModelInterface } from "../../interfaces/players_Interface";
+
+export const playerDatabase: PlayerModelInterface[] = [
     {
       "id": 1,
       "name": "Lionel Messi",
