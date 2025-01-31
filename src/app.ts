@@ -1,8 +1,8 @@
 import express from "express";
 import router from "./routes";
 
-function createApp(){
-    
+function createApp() {
+
     const app = express();
 
     app.use(express.json());

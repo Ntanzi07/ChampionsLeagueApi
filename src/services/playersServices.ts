@@ -1,8 +1,8 @@
-import { findAllPlayers } from "../data/players/players-repository";
+import { findAllPlayers, findPlayerById } from "../data/players/players-repository";
 import { validateDataResponse } from "../utils/http-helper";
 
-export const getPlayerService = async () => {
-    const data = await findAllPlayers();
+export const getPlayerService = async (id?: number) => {
+    const data = !id ? await findAllPlayers() : await findPlayerById(id);
     const response = await validateDataResponse(data);
     return response;
 }

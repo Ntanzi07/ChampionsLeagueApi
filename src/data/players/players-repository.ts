@@ -5,6 +5,6 @@ export const findAllPlayers = async (): Promise<PlayerModelInterface[]> => {
     return playerDatabase;
 }
 
-export const findPlayerById = async (id: number): Promise<PlayerModelInterface | undefined> => {
+export const findPlayerById = async (id: number | undefined): Promise<PlayerModelInterface | undefined> => {
     return playerDatabase.find(player => player.id === id);
 }
