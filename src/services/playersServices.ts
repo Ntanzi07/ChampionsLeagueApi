@@ -1,5 +1,6 @@
 import * as playerRepository from "../data/players/players-repository";
 import { PlayerModelInterface } from "../interfaces/players_Interface";
+import { statisticsModelInterface } from "../interfaces/statistc_Interface";
 import { validateDataRequest, validateDataResponse } from "../utils/http-helper";
 
 export const getPlayerService = async () => {
@@ -24,5 +25,11 @@ export const postPlayerService = async (data: PlayerModelInterface) => {
 export const deletePlayerService = async (id: number) => {
     const data = await playerRepository.deletePlayer(id);
     const response = await validateDataResponse(data);
+    return response;
+}
+
+export const updatePlayerService = async (id: number, statistics: statisticsModelInterface) => {
+ 
+    const response = await validateDataResponse(statistics);
     return response;
 }
