@@ -20,3 +20,9 @@ export const postPlayerService = async (data: PlayerModelInterface) => {
         playerRepository.postPlayer(data)
     return response;
 }
+
+export const deletePlayerService = async (id: number) => {
+    const data = await playerRepository.deletePlayer(id);
+    const response = await validateDataResponse(data);
+    return response;
+}

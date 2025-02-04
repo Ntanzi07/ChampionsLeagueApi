@@ -17,3 +17,9 @@ export const postPlayerController = async (req: Request, res: Response) => {
     const httpResponse = await playerService.postPlayerService(data)
     res.status(httpResponse.statusCode).send(httpResponse.body);
 }
+
+export const deletePlayerController = async (req: Request, res: Response) => {
+    const id = parseInt(req.params.id);
+    const httpResponse = await playerService.deletePlayerService(id);
+    res.status(httpResponse.statusCode).send(httpResponse.body);
+}
