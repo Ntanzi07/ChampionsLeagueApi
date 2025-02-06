@@ -3,32 +3,32 @@ import { PlayerModelInterface } from "../interfaces/players_Interface";
 import { statisticsModelInterface } from "../interfaces/statistc_Interface";
 import { validateDataRequest, validateDataResponse } from "../utils/http-helper";
 
-export const getPlayerService = async () => {
-    const data = await playerRepository.findAllPlayers()
+export const get = async () => {
+    const data = await playerRepository.findAll()
     const response = await validateDataResponse(data);
     return response;
 }
 
-export const getPlayerByIdService = async (id: number) => {
-    const data = await playerRepository.findPlayerById(id);
+export const getById = async (id: number) => {
+    const data = await playerRepository.findById(id);
     const response = await validateDataResponse(data);
     return response;
 }
 
-export const postPlayerService = async (data: PlayerModelInterface) => {
+export const post = async (data: PlayerModelInterface) => {
     const response = await validateDataRequest(data);
     if(response.body !== null)
         playerRepository.postPlayer(data)
     return response;
 }
 
-export const deletePlayerService = async (id: number) => {
-    const data = await playerRepository.deletePlayer(id);
+export const deleteS = async (id: number) => {
+    const data = await playerRepository.deleteById(id);
     const response = await validateDataResponse(data);
     return response;
 }
 
-export const updatePlayerService = async (id: number, statistics: statisticsModelInterface) => {
+export const update = async (id: number, statistics: statisticsModelInterface) => {
     const data = await playerRepository.findAndModify(id, statistics);
     const response = await validateDataResponse(data);
     return response;
