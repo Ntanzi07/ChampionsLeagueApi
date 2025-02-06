@@ -1,4 +1,4 @@
-import * as playerRepository from "../data/players/players-repository";
+import * as playerRepository from "../data/players/playersRepository";
 import { PlayerModelInterface } from "../interfaces/players_Interface";
 import { statisticsModelInterface } from "../interfaces/statistc_Interface";
 import { validateDataRequest, validateDataResponse } from "../utils/http-helper";

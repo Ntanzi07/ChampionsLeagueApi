@@ -1,4 +1,4 @@
-import * as clubRepository from "../data/club/club-repository";
+import * as clubRepository from "../data/clubs/clubRepository";
 import { validateDataResponse } from "../utils/http-helper";
 
 
