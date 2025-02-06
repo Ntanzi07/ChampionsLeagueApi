@@ -29,7 +29,7 @@ export const deletePlayerService = async (id: number) => {
 }
 
 export const updatePlayerService = async (id: number, statistics: statisticsModelInterface) => {
- 
-    const response = await validateDataResponse(statistics);
+    const data = await playerRepository.findAndModify(id, statistics);
+    const response = await validateDataResponse(data);
     return response;
 }
